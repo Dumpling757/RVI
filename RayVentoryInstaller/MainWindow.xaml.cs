@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using ControlzEx.Theming;
+using MenuItem = RayVentoryInstaller.ViewModels.MenuItem;
 
 namespace RayVentoryInstaller
 {
@@ -22,17 +23,42 @@ namespace RayVentoryInstaller
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private readonly Navigation.NavigationServiceEx navigationServiceEx;
         public MainWindow()
         {
             InitializeComponent();
 
-            
+            this.navigationServiceEx = new Navigation.NavigationServiceEx();
+            this.navigationServiceEx.Navigated += this.NavigationServiceEx_OnNavigated;
+            this.HamburgerMenuControl.Content = this.navigationServiceEx.Frame;
+
+            this.Loaded += (sender, args) => this.navigationServiceEx.Navigate(new Uri("Views/Mainpage.xml"));
+
         }
 
         private void hmMenu_ItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
         {
             this.HamburgerMenuControl.Content = e.InvokedItem;
 
+        }
+        private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
+        {
+            if (e.InvokedItem is MenuItem menuItem && menuItem.IsNavigation)
+            {
+                this.navigationServiceEx.Navigate(menuItem.NavigationDestination);
+            }
+        }
+        private void NavigationServiceEx_OnNavigated(object sender, NavigationEventArgs e)
+        {
+            // select the menu item
+            this.HamburgerMenuControl.SelectedItem = this.HamburgerMenuControl
+                                                         .Items
+                                                         .OfType<MenuItem>()
+                                                         .FirstOrDefault(x => x.NavigationDestination == e.Uri);
+            this.HamburgerMenuControl.SelectedOptionsItem = this.HamburgerMenuControl
+                                                                .OptionsItems
+                                                                .OfType<MenuItem>()
+                                                                .FirstOrDefault(x => x.NavigationDestination == e.Uri);
         }
     }
 }
