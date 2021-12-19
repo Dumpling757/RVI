@@ -31,7 +31,7 @@ namespace RayVentoryInstaller
 
         private void hmMenu_ItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
         {
-            this.hmMenu.Content = e.InvokedItem;
+            this.HamburgerMenuControl.Content = e.InvokedItem;
 
         }
     }
