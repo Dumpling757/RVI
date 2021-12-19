@@ -1,0 +1,94 @@
+﻿<Page x:Class="RayVentoryInstaller.Views.GeneralPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RayVentoryInstaller.Views"
+      
+      xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+      xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700"
+      Title="General">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="75" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="200*"/>
+            <ColumnDefinition Width="25" />
+            <ColumnDefinition Width="100"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+
+        </Grid.RowDefinitions>
+
+        <Label Content="SQL Server" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+        <TextBox x:Name="tb_SQLServer" Grid.Row="0" Margin="0,7,0,7" Grid.Column="1"/>
+        <Controls:ToggleSwitch x:Name="tglsw_InstallSQL"
+                               OnContent="Install SQL Server"
+                               OffContent="Insert SQL Server Details"
+                               Toggled="tglsw_InstallSQL_Toggled" 
+                               Grid.Column="2"
+                               Grid.Row="0"
+                               VerticalAlignment="Center"
+                               FontFamily="Myriad Pro"
+                               />
+        
+
+        <Label Content="Instance" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+        <TextBox x:Name="tb_Instance" Grid.Column="1" Grid.Row="1" Margin="0,7,0,7"/>
+        <Controls:ToggleSwitch x:Name="tglsw_Instance"
+                               OnContent="Default Instance"
+                               OffContent="Named Instance"
+                               Toggled="tglsw_Instance_Toggled" 
+                               Grid.Column="2"
+                               Grid.Row="1"
+                               VerticalAlignment="Center"
+                               FontFamily="Myriad Pro"
+                               />
+
+
+        <Label Content="Port" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+        <TextBox x:Name="tb_PortName" Grid.Column="1" Grid.Row="2" Margin="0,7,0,7"/>
+        
+        <Label Content="SQL User" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+        <TextBox x:Name="tb_SQLUser" Grid.Column="1" Grid.Row="3" Margin="0,7,0,7"/>
+        <Controls:ToggleSwitch x:Name="tglsw_Windows"
+                               OnContent="Windows Authentication"
+                               OffContent="SQL Authentication"
+                               Toggled="tglsw_Instance_Toggled" 
+                               Grid.Column="2"
+                               Grid.Row="3"
+                               VerticalAlignment="Center"
+                               FontFamily="Myriad Pro"
+                               />
+        
+
+        <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+        <PasswordBox x:Name="pb_SQLPassword" Grid.Column="1" Grid.Row="4" Margin="0,7,0,7"/>
+        <Button x:Name="b_VerifySQLConn" Content="Verify Connection" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4" Click="b_VerifySQLConn_Click" FontFamily="{DynamicResource Font}" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Page>
