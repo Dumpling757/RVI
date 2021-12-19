@@ -20,47 +20,42 @@ namespace RayVentoryInstaller.ViewModels
             // Build the menus
             this.Menu.Add(new MenuItem()
             {
-                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.BugSolid },
-                Label = "Bugs",
-                NavigationType = typeof(BugsPage),
-                NavigationDestination = new Uri("Views/BugsPage.xaml", UriKind.RelativeOrAbsolute)
+
+                Label = "General",
+                NavigationType = typeof(GeneralPage),
+                NavigationDestination = new Uri("Views/GeneralPage.xaml", UriKind.RelativeOrAbsolute)
             });
             this.Menu.Add(new MenuItem()
             {
-                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.UserSolid },
-                Label = "User",
-                NavigationType = typeof(UserPage),
-                NavigationDestination = new Uri("Views/UserPage.xaml", UriKind.RelativeOrAbsolute)
+                
+                Label = "ScanEngine",
+                NavigationType = typeof(ScanEnginePage),
+                NavigationDestination = new Uri("Views/ScanEnginePage.xaml", UriKind.RelativeOrAbsolute)
             });
             this.Menu.Add(new MenuItem()
             {
-                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.CoffeeSolid },
-                Label = "Break",
-                NavigationType = typeof(BreakPage),
-                NavigationDestination = new Uri("Views/BreakPage.xaml", UriKind.RelativeOrAbsolute)
+                
+                Label = "Server",
+                NavigationType = typeof(ServerPage),
+                NavigationDestination = new Uri("Views/ServerPage.xaml", UriKind.RelativeOrAbsolute)
             });
             this.Menu.Add(new MenuItem()
             {
-                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.FontAwesomeBrands },
-                Label = "Awesome",
-                NavigationType = typeof(AwesomePage),
-                NavigationDestination = new Uri("Views/AwesomePage.xaml", UriKind.RelativeOrAbsolute)
+                
+                Label = "DataHub",
+                NavigationType = typeof(DataHubPage),
+                NavigationDestination = new Uri("Views/DataHubPage.xaml", UriKind.RelativeOrAbsolute)
             });
+
 
             this.OptionsMenu.Add(new MenuItem()
             {
-                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.CogsSolid },
-                Label = "Settings",
-                NavigationType = typeof(SettingsPage),
-                NavigationDestination = new Uri("Views/SettingsPage.xaml", UriKind.RelativeOrAbsolute)
+                
+                Label = "Advanced",
+                NavigationType = typeof(AdvancedPage),
+                NavigationDestination = new Uri("Views/AdvancedPage.xaml", UriKind.RelativeOrAbsolute)
             });
-            this.OptionsMenu.Add(new MenuItem()
-            {
-                Icon = new PackIconFontAwesome() { Kind = PackIconFontAwesomeKind.InfoCircleSolid },
-                Label = "About",
-                NavigationType = typeof(AboutPage),
-                NavigationDestination = new Uri("Views/AboutPage.xaml", UriKind.RelativeOrAbsolute)
-            });
+
         }
     }
 }
