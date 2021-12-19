@@ -15,6 +15,7 @@
     <Color x:Key="Theme.PrimaryAccentColor">#019390</Color>
     <SolidColorBrush x:Key="Theme.ShowcaseBrush" Color="#019390" options:Freeze="True" />
 
+    <FontFamily x:Key="Font">Myriad Pro</FontFamily>
     <!--  *************COLORS START*************  -->
 
     <!--  Theme Base Colors  -->
