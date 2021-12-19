@@ -5,10 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:local="clr-namespace:RayVentoryInstaller"
         mc:Ignorable="d"
-        Title="RayVentory Installer" Height="450" Width="800">
+        Title="RayVentory Installer" Height="450" Width="800"
+        >
     <Grid>
 
+        
+        <Controls:HamburgerMenu x:Name="hmMenu"
+                            DisplayMode="Overlay"
+                            HamburgerWidth="48"
+                            ItemInvoked="hmMenu_ItemInvoked"
+                            >
+
+            <Controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
+                <DataTemplate>
+                    <TextBlock HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="16"
+                               Foreground="White"
+                               Text="Products"
+                               FontFamily="Myriad Pro"
+                               />
+                </DataTemplate>
+            </Controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
+
+            <Controls:HamburgerMenu.ItemsSource>
+                <Controls:HamburgerMenuItemCollection>
+                    <Controls:HamburgerMenuGlyphItem Glyph="/Assets/RayVentory_2017_4c_white.png" Label="RayVentory Scan Engine" />
+
+                </Controls:HamburgerMenuItemCollection>
+            </Controls:HamburgerMenu.ItemsSource>
+        </Controls:HamburgerMenu>
     </Grid>
 </mah:MetroWindow>

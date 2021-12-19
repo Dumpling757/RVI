@@ -26,7 +26,13 @@ namespace RayVentoryInstaller
         {
             InitializeComponent();
 
-            ThemeManager.Current.ChangeTheme(this, "Light.Green");
+            
+        }
+
+        private void hmMenu_ItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
+        {
+            this.hmMenu.Content = e.InvokedItem;
+
         }
     }
 }
