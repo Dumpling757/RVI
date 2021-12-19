@@ -11,13 +11,23 @@
         mc:Ignorable="d"
         Title="RayVentory Installer" Height="450" Width="800"
         >
+    <Controls:MetroWindow.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Name="HamburgerItem" Source="/Resources/HamburgerMenuItem.xaml" />
+                
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Controls:MetroWindow.Resources>
     <Grid>
 
-        
-        <Controls:HamburgerMenu x:Name="hmMenu"
+
+        <Controls:HamburgerMenu x:Name="HamburgerMenuControl"
                             DisplayMode="Overlay"
                             HamburgerWidth="48"
                             ItemInvoked="hmMenu_ItemInvoked"
+                            ItemTemplate="{DynamicResource HamburgerMenuItem}"
+            
                             >
 
             <Controls:HamburgerMenu.HamburgerMenuHeaderTemplate>
@@ -38,6 +48,28 @@
 
                 </Controls:HamburgerMenuItemCollection>
             </Controls:HamburgerMenu.ItemsSource>
+
+            <Controls:HamburgerMenu.ContentTemplate>
+                <DataTemplate>
+                    <Grid x:Name="ContentGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="48"/>
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0"
+                                Margin="-1 0 -1 0"
+                                Background="#7a7a7a" >
+                            <TextBlock x:Name="Header"
+                                       HorizontalAlignment="Center"
+                                       VerticalAlignment="Center"
+                                       FontSize="24"
+                                       Foreground="White"
+                                       Text="{Binding Label}" />
+                        </Border>
+                    </Grid>
+
+
+                </DataTemplate>
+            </Controls:HamburgerMenu.ContentTemplate>
         </Controls:HamburgerMenu>
     </Grid>
 </mah:MetroWindow>
