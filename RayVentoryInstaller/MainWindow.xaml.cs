@@ -70,8 +70,12 @@ namespace RayVentoryInstaller
         */
         private void b_Navigation_Click(object sender, RoutedEventArgs e)
         {
-            
-            Uri uri = new Uri($"Views/{sender.ToString()}Page.xml");
+            var button = (Button)sender;
+            //UriBuilder uriBuilder = new UriBuilder("Views", button.Content + "Page.xml");
+            string uristring = $"Views/{button.Content}Page.xaml";
+            // Uri uri = uriBuilder.Uri;
+            Uri uri = new System.Uri(uristring, UriKind.Relative);
+
                 this.MainFrame.Navigate(uri, (this.MainFrame));            
         }
     }
