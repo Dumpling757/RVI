@@ -27,38 +27,52 @@ namespace RayVentoryInstaller
         public MainWindow()
         {
             InitializeComponent();
-
+            /*
             this.navigationServiceEx = new Navigation.NavigationServiceEx();
             this.navigationServiceEx.Navigated += this.NavigationServiceEx_OnNavigated;
-            this.HamburgerMenuControl.Content = this.navigationServiceEx.Frame;
+            // this.HamburgerMenuControl.Content = this.navigationServiceEx.Frame;
 
-            this.Loaded += (sender, args) => this.navigationServiceEx.Navigate(new Uri("Views/Mainpage.xml"));
-
+            this.Loaded += (sender, args) => this.navigationServiceEx.Navigate(new Uri("Views/Generalpage.xml"));
+            */
         }
 
-        private void hmMenu_ItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
-        {
-            this.HamburgerMenuControl.Content = e.InvokedItem;
+        /*   private void hmMenu_ItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
+           {
+               this.HamburgerMenuControl.Content = e.InvokedItem;
 
-        }
-        private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
-        {
-            if (e.InvokedItem is MenuItem menuItem && menuItem.IsNavigation)
-            {
-                this.navigationServiceEx.Navigate(menuItem.NavigationDestination);
-            }
-        }
+           }
+           private void HamburgerMenuControl_OnItemInvoked(object sender, HamburgerMenuItemInvokedEventArgs e)
+           {
+               if (e.InvokedItem is MenuItem menuItem && menuItem.IsNavigation)
+               {
+                   this.navigationServiceEx.Navigate(menuItem.NavigationDestination);
+               }
+           }
+
+           private void NavigationServiceEx_OnNavigated(object sender, NavigationEventArgs e)
+           {
+               // select the menu item
+               this.HamburgerMenuControl.SelectedItem = this.HamburgerMenuControl
+                                                            .Items
+                                                            .OfType<MenuItem>()
+                                                            .FirstOrDefault(x => x.NavigationDestination == e.Uri);
+               this.HamburgerMenuControl.SelectedOptionsItem = this.HamburgerMenuControl
+                                                                   .OptionsItems
+                                                                   .OfType<MenuItem>()
+                                                                   .FirstOrDefault(x => x.NavigationDestination == e.Uri);
+           }
+        */
+        /*
         private void NavigationServiceEx_OnNavigated(object sender, NavigationEventArgs e)
         {
-            // select the menu item
-            this.HamburgerMenuControl.SelectedItem = this.HamburgerMenuControl
-                                                         .Items
-                                                         .OfType<MenuItem>()
-                                                         .FirstOrDefault(x => x.NavigationDestination == e.Uri);
-            this.HamburgerMenuControl.SelectedOptionsItem = this.HamburgerMenuControl
-                                                                .OptionsItems
-                                                                .OfType<MenuItem>()
-                                                                .FirstOrDefault(x => x.NavigationDestination == e.Uri);
+
+        }
+        */
+        private void b_Navigation_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Uri uri = new Uri($"Views/{sender.ToString()}Page.xml");
+                this.MainFrame.Navigate(uri, (this.MainFrame));            
         }
     }
 }

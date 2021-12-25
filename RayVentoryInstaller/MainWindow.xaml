@@ -19,10 +19,29 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Controls:MetroWindow.Resources>
-    <Grid>
+    <Grid x:Name="SuperGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+        <Grid x:Name="NavigationGrid" Grid.Column="0" Width="100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
 
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="b_General" Content="General" Style="{DynamicResource MahApps.Styles.Button}"  Grid.Row="0" Click="b_Navigation_Click"/>
+        </Grid>
 
-        <Controls:HamburgerMenu x:Name="HamburgerMenuControl"
+        <Frame x:Name="MainFrame" Grid.Column="1"></Frame> 
+
+        <!--<Controls:HamburgerMenu x:Name="HamburgerMenuControl"
                             DisplayMode="Overlay"
                             HamburgerWidth="48"
                             ItemInvoked="hmMenu_ItemInvoked"
@@ -70,6 +89,6 @@
 
                 </DataTemplate>
             </Controls:HamburgerMenu.ContentTemplate>
-        </Controls:HamburgerMenu>
+        </Controls:HamburgerMenu> -->
     </Grid>
 </mah:MetroWindow>
