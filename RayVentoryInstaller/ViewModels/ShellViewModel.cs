@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using MahApps.Metro.IconPacks;
-using RayVentoryInstaller.Mvvm;
+
 using RayVentoryInstaller.Views;
 
 namespace RayVentoryInstaller.ViewModels
 {
-    public class ShellViewModel : BindableBase
+    public class ShellViewModel //: BindableBase
     {
         private static readonly ObservableCollection<MenuItem> AppMenu = new ObservableCollection<MenuItem>();
         private static readonly ObservableCollection<MenuItem> AppOptionsMenu = new ObservableCollection<MenuItem>();
 
-        public ObservableCollection<MenuItem> Menu => AppMenu;
+        // public ObservableCollection<MenuItem> Menu => AppMenu;
 
-        public ObservableCollection<MenuItem> OptionsMenu => AppOptionsMenu;
-
+        // public ObservableCollection<MenuItem> OptionsMenu => AppOptionsMenu;
+        /*
         public ShellViewModel()
         {
             // Build the menus
@@ -57,5 +56,7 @@ namespace RayVentoryInstaller.ViewModels
             });
 
         }
+        */
     }
+
 }
