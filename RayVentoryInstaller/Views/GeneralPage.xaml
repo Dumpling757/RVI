@@ -46,7 +46,7 @@
         
 
         <Label Content="Instance" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
-        <TextBox x:Name="tb_Instance" Grid.Column="1" Grid.Row="1" Margin="0,7,0,7"/>
+        <TextBox x:Name="tb_Instance" Grid.Column="1" Grid.Row="1" Margin="0,7,0,7" />
         <Controls:ToggleSwitch x:Name="tglsw_Instance"
                                OnContent="Default Instance"
                                OffContent="Named Instance"
@@ -77,6 +77,9 @@
         <Label Content="Password" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
         <PasswordBox x:Name="pb_SQLPassword" Grid.Column="1" Grid.Row="4" Margin="0,7,0,7"/>
         <Button x:Name="b_VerifySQLConn" Content="Verify Connection" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4" Click="b_VerifySQLConn_Click" FontFamily="{DynamicResource Font}" />
+        <Label x:Name="SQLAuthRight"  Content="✓" Grid.Column="3" Grid.Row="4" Visibility="Hidden" Style="{DynamicResource MahApps.Styles.ContentControl.PathIcon}"/>
+        <Label x:Name="SQLAuthWrong"  Content="❌" Grid.Column="3" Grid.Row="4" Visibility="Hidden" Style="{DynamicResource MahApps.Styles.ContentControl.PathIcon}"/>
+
 
 
 
