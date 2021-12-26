@@ -83,7 +83,11 @@ namespace RayVentoryInstaller
             // Uri uri = uriBuilder.Uri;
             Uri uri = new System.Uri(uristring, UriKind.Relative);
 
-                this.MainFrame.Navigate(uri, (this.MainFrame));            
+                this.MainFrame.Navigate(uri, (this.MainFrame));
+
+            button.Background = new SolidColorBrush((Color) Application.Current.FindResource("MahApps.Colors.Gray2"));
+            button.Foreground = new SolidColorBrush(Colors.White);
         }
+
     }
 }

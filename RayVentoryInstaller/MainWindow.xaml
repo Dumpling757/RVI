@@ -10,6 +10,9 @@
         xmlns:local="clr-namespace:RayVentoryInstaller"
         mc:Ignorable="d"
         Title="RayVentory Installer" Height="450" Width="800"
+                 x:Name="w_Window"
+
+                 
         >
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
@@ -19,7 +22,16 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Controls:MetroWindow.Resources>
-    <Grid x:Name="SuperGrid">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12"/>
+
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Rectangle x:Name="ChromeAccent" Fill="{DynamicResource MahApps.Brushes.Highlight}" Grid.Row="0" Grid.Column="0"/>
+    
+
+    <Grid x:Name="SuperGrid" Grid.Row="1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="700"/>
@@ -30,7 +42,7 @@
             <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
-        <Rectangle x:Name="ChromeAccent" Fill="{DynamicResource MahApps.Brushes.Highlight}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+        
 
         <Grid x:Name="NavigationGrid" Grid.Column="0" Width="100" HorizontalAlignment="Left" Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -102,5 +114,6 @@
                 </DataTemplate>
             </Controls:HamburgerMenu.ContentTemplate>
         </Controls:HamburgerMenu> -->
+    </Grid>
     </Grid>
 </mah:MetroWindow>
