@@ -10,7 +10,7 @@
       xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
 
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="400" d:DesignWidth="700"
       Title="ScanEngine">
 
     <Grid>
@@ -18,7 +18,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="75" />
                 <ColumnDefinition Width="300" />
-                <ColumnDefinition Width="200*"/>
+                <ColumnDefinition Width="100"/>
                 <ColumnDefinition Width="25" />
                 <ColumnDefinition Width="100"/>
             </Grid.ColumnDefinitions>
@@ -36,7 +36,7 @@
 
             <Label Content="Installer Location" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
             <TextBox x:Name="tb_MsiFile" Grid.Row="0" Margin="0,7,0,7" Grid.Column="1"/>
-            <Button x:Name="b_BrowseMsi" Content="[...]" Grid.Row="0" Grid.Column="2" Click="b_BrowseMsi_Click" Margin="7,7,250,7" HorizontalAlignment="Left"/>
+            <Button x:Name="b_BrowseMsi" Content="Browse" Grid.Row="0" Grid.Column="2" Click="b_BrowseMsi_Click" Margin="7,7,0,7" HorizontalAlignment="Center"/>
 
 
         <Label Content="Installation Drive" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
@@ -46,7 +46,7 @@
 
             <Label Content="License File" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
             <TextBox x:Name="tb_LicFile" Grid.Column="1" Grid.Row="2" Margin="0,7,0,7"/>
-            <Button x:Name="b_browseRSL" Content="[...]" Grid.Row="2" Grid.Column="2" Click="b_browseRSL_Click" Margin="7,7,250,7" HorizontalAlignment="Left"/>
+            <Button x:Name="b_browseRSL" Content="Browse" Grid.Row="2" Grid.Column="2" Click="b_browseRSL_Click" Margin="7,7,0,7" HorizontalAlignment="Center"/>
 
 
     </Grid>
