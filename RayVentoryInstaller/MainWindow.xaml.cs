@@ -28,6 +28,7 @@ namespace RayVentoryInstaller
         public MainWindow()
         {
             InitializeComponent();
+            MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             /*
             this.navigationServiceEx = new Navigation.NavigationServiceEx();
             this.navigationServiceEx.Navigated += this.NavigationServiceEx_OnNavigated;
