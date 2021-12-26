@@ -238,7 +238,7 @@
         DEFAULT COMMON CONTROL COLORS
         ******************************************************************
     -->
-    <Color x:Key="MahApps.Colors.SystemAccent">#FFF0A30A</Color>
+    <Color x:Key="MahApps.Colors.SystemAccent">#019390</Color>
 
     <Color x:Key="MahApps.Colors.SystemAltHigh">#FFFFFFFF</Color>
     <Color x:Key="MahApps.Colors.SystemAltLow">#33FFFFFF</Color>
