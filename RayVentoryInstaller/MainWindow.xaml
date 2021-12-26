@@ -21,11 +21,18 @@
     </Controls:MetroWindow.Resources>
     <Grid x:Name="SuperGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="700"/>
         </Grid.ColumnDefinitions>
-        
-        <Grid x:Name="NavigationGrid" Grid.Column="0" Width="100">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="400*"/>
+            <RowDefinition Height="40"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle x:Name="ChromeAccent" Fill="{DynamicResource MahApps.Brushes.Highlight}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        <Grid x:Name="NavigationGrid" Grid.Column="0" Width="100" HorizontalAlignment="Left" Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
 
@@ -36,7 +43,12 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
+
             <Button x:Name="b_General" Content="General" Style="{DynamicResource MahApps.Styles.Button}"  Grid.Row="0" Click="b_Navigation_Click"/>
+            <Button x:Name="b_ScanEngine" Content="Scan Engine" Style="{DynamicResource MahApps.Styles.Button}" Grid.Row="1" Click="b_Navigation_Click"/>
+            <Button x:Name="b_Server" Content="Server" Style="{DynamicResource MahApps.Styles.Button}" Grid.Row="2" Click="b_Navigation_Click"/>
+            <Button x:Name="b_DataHub" Content="DataHub" Style="{DynamicResource MahApps.Styles.Button}" Grid.Row="3" Click="b_Navigation_Click" />
+
         </Grid>
 
         <Frame x:Name="MainFrame" Grid.Column="1"></Frame> 
