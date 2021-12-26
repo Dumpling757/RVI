@@ -73,9 +73,10 @@ namespace RayVentoryInstaller
         {
             var button = (Button)sender;
             string buttonContent = (string)button.Content;
-            buttonContent.Replace(' ', empty);
+            if (buttonContent == "Scan Engine")
+                buttonContent = "ScanEngine";
             //UriBuilder uriBuilder = new UriBuilder("Views", button.Content + "Page.xml");
-            string uristring = $"Views/{button.Content}Page.xaml";
+            string uristring = $"Views/{buttonContent}Page.xaml";
             // Uri uri = uriBuilder.Uri;
             Uri uri = new System.Uri(uristring, UriKind.Relative);
 
