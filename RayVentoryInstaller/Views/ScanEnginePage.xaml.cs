@@ -30,7 +30,7 @@ namespace RayVentoryInstaller.Views
         private void b_BrowseMsi_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Scan Engine Installer (*.msi)";
+            openFileDialog.Filter = "Scan Engine Installer (*.msi) | *.msi";
             tb_MsiFile.Text = openFileDialog.FileName;
 
         }
@@ -38,7 +38,7 @@ namespace RayVentoryInstaller.Views
         private void b_browseRSL_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Scan Engine License File (*.rsl)";
+            openFileDialog.Filter = "Scan Engine License File (*.rsl) | *.rsl";
             tb_LicFile.Text = openFileDialog.FileName;
 
         }
