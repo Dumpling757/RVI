@@ -34,6 +34,7 @@ namespace RayVentoryInstaller.Views
 
         private void tglsw_Instance_Toggled(object sender, RoutedEventArgs e)
         {
+            tb_Instance.IsEnabled = false;
 
         }
 
@@ -110,6 +111,29 @@ namespace RayVentoryInstaller.Views
             {
                 MessageBox.Show("Cannot open connection!");
             }
+        }
+
+        private void tglsw_Windows_Toggled(object sender, RoutedEventArgs e)
+        {
+            if(tglsw_Windows.IsOn)
+            {
+                tb_SQLUser.IsEnabled = false;
+                tb_SQLUser.Text = Environment.UserName;
+                lb_SQLUser.Content = "Windows User";
+                pb_SQLPassword.Clear();
+                pb_SQLPassword.IsEnabled = false;
+            }
+
+            else
+            {
+                tb_SQLUser.IsEnabled = true;
+                tb_SQLUser.Clear();
+                lb_SQLUser.Content = "SQL User";
+                pb_SQLPassword.Clear();
+                pb_SQLPassword.IsEnabled = true;
+            }
+            
+
         }
     }
 }
