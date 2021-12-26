@@ -29,6 +29,8 @@ namespace RayVentoryInstaller
         {
             InitializeComponent();
             MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
+            Uri uri = new Uri("Views/GeneralPage.xaml", UriKind.Relative);
+            this.MainFrame.Navigate(uri, (this.MainFrame));
             /*
             this.navigationServiceEx = new Navigation.NavigationServiceEx();
             this.navigationServiceEx.Navigated += this.NavigationServiceEx_OnNavigated;
