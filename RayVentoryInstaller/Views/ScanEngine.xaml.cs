@@ -10,6 +10,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using Microsoft.Win32;
+
+
 
 namespace RayVentoryInstaller.Views
 {
@@ -21,6 +25,22 @@ namespace RayVentoryInstaller.Views
         public ScanEngine()
         {
             InitializeComponent();
+        }
+
+        private void b_BrowseMsi_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Scan Engine Installer (*.msi)";
+            tb_MsiFile.Text = openFileDialog.FileName;
+
+        }
+
+        private void b_browseRSL_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Scan Engine License File (*.rsl)";
+            tb_LicFile.Text = openFileDialog.FileName;
+
         }
     }
 }
