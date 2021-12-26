@@ -23,6 +23,7 @@ namespace RayVentoryInstaller
     /// </summary>
     public partial class MainWindow : MetroWindow
     {
+        private const char empty = '\0';
         private readonly Navigation.NavigationServiceEx navigationServiceEx;
         public MainWindow()
         {
@@ -71,6 +72,8 @@ namespace RayVentoryInstaller
         private void b_Navigation_Click(object sender, RoutedEventArgs e)
         {
             var button = (Button)sender;
+            string buttonContent = (string)button.Content;
+            buttonContent.Replace(' ', empty);
             //UriBuilder uriBuilder = new UriBuilder("Views", button.Content + "Page.xml");
             string uristring = $"Views/{button.Content}Page.xaml";
             // Uri uri = uriBuilder.Uri;
