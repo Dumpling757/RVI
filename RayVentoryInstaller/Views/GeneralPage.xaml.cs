@@ -34,7 +34,10 @@ namespace RayVentoryInstaller.Views
 
         private void tglsw_Instance_Toggled(object sender, RoutedEventArgs e)
         {
-            tb_Instance.IsEnabled = false;
+            MahApps.Metro.Controls.ToggleSwitch toggleSwitch = (MahApps.Metro.Controls.ToggleSwitch)sender;
+            bool enabled = (bool)toggleSwitch.IsEnabled;
+            tb_Instance.IsEnabled = enabled;
+            tb_Instance.Text = String.Empty;
 
         }
 
