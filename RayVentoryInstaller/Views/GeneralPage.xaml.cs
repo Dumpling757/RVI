@@ -40,6 +40,7 @@ namespace RayVentoryInstaller.Views
 
         private void b_VerifySQLConn_Click(object sender, RoutedEventArgs e)
         {
+            /*
             foreach(Control control in LogicalTreeHelper.GetChildren(this))
             {
                 if(control is TextBox)
@@ -47,6 +48,7 @@ namespace RayVentoryInstaller.Views
                     (control as TextBox).IsEnabled = false;
                 }
             }
+            */
 
             string connection;
 
@@ -56,21 +58,21 @@ namespace RayVentoryInstaller.Views
 
             string user;
 
-            connection = $"DataSource={ tb_SQLServer.Text}";
-            if(tb_Instance.Text != null)
+            connection = $"Server={ tb_SQLServer.Text}";
+            if(tb_Instance.Text != String.Empty)
             {
-                connection += '\\' + tb_Instance.Text;
+                connection += @"\" + tb_Instance.Text;
             }
 
-            if(tb_PortName != null)
+            if(tb_PortName.Text != String.Empty)
             {
-                connection += ':' + tb_PortName.Text;
+                connection += ',' + tb_PortName.Text;
             }
-            connection += $";Initial Catalog=master;";
+            connection += ";Database=master;";
 
-            if(tb_SQLUser != null)
+            if(!tglsw_Windows.IsOn)
             {
-                connection += $"User ID={tb_SQLUser.Text};Password={pb_SQLPassword.Password}";
+                connection += $"User ID={tb_SQLUser.Text};Password={pb_SQLPassword.Password};";
                 user = tb_SQLUser.Text;
             }
             else
@@ -83,6 +85,7 @@ namespace RayVentoryInstaller.Views
                 "INNER JOIN master.sys.server_principals r ON r.principal_id = rm.role_principal_id AND r.type = 'R'" +
                 $" INNER JOIN master.sys.server_principals m ON m.principal_id = rm.member_principal_id WHERE m.name = \'{user}\';";
 
+
             sqlConnection = new SqlConnection(connection);
             try
             {
@@ -91,11 +94,12 @@ namespace RayVentoryInstaller.Views
                 sqlDataReader = sqlCommand.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
-                    if((string)sqlDataReader.GetValue(0) == "Sysadmin")
+                    if((string)sqlDataReader.GetValue(0) == "sysadmin" || (string)sqlDataReader.GetValue(0) == "dbcreator")
                     {
                         SQLAuthWrong.Visibility = Visibility.Hidden;
                         SQLAuthRight.Visibility = Visibility.Visible;
                     }
+
                     else
                     {
                         SQLAuthRight.Visibility = Visibility.Hidden;
@@ -109,7 +113,7 @@ namespace RayVentoryInstaller.Views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Cannot open connection!");
+                MessageBox.Show($"Cannot open connection! {ex.ToString()}");
             }
         }
 
